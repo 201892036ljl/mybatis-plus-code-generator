@@ -105,7 +105,7 @@
                     <!--                    这个test-one和altDeploymentRepository中的对应-->
                     <outputDirectory>${project.build.directory}/mybatis-plus-code-generator</outputDirectory><!--本地jar地址-->
                     <!--                    分支说是要refs/heads/开头-->
-                    <branch>refs/heads/main</branch><!--分支的名称-->
+                    <branch>refs/heads/release-1.0.1</branch><!--分支的名称-->
                     <merge>true</merge>
                     <includes>
                         <include>**/*</include>
