@@ -7,7 +7,6 @@ import senrui.mybatisplus.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 <#else>
-@Mapper
 import senrui.mybatisplus.CoreMapper;
 </#if>
 /**
@@ -19,6 +18,7 @@ import senrui.mybatisplus.CoreMapper;
  * @since ${date}
  */
 <#if kotlin>
+@Mapper
 interface ${table.mapperName} : ${superMapperClass}<${entity}>
 <#else>
 <#if (cfg.poXmlData['${entity}Po:poXmlDataFlag'])!false>
