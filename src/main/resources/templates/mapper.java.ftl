@@ -1,10 +1,10 @@
 package ${package.Mapper};
 
+import org.apache.ibatis.annotations.Mapper;
 import ${package.Entity}.${entity};
 <#if (cfg.poXmlData['${entity}Po:poXmlDataFlag'])!false>
 import ${cfg.poPackage}.${entity}Po;
 import senrui.mybatisplus.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 <#else>
 import senrui.mybatisplus.CoreMapper;
@@ -18,12 +18,13 @@ import senrui.mybatisplus.CoreMapper;
  * @since ${date}
  */
 <#if kotlin>
-@Mapper
 interface ${table.mapperName} : ${superMapperClass}<${entity}>
 <#else>
 <#if (cfg.poXmlData['${entity}Po:poXmlDataFlag'])!false>
+@Mapper
 public interface ${table.mapperName} extends BaseMapper<${entity}, ${entity}Po> {
 <#else>
+@Mapper
 public interface ${table.mapperName} extends CoreMapper<${entity}> {
 </#if>
 }
